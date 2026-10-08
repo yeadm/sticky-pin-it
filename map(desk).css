@@ -17,6 +17,33 @@
   z-index: 1;
 }
 
+.map-load-error {
+  position: absolute;
+  top: 50%;
+  left: 24px;
+  right: 360px;
+  transform: translateY(-50%);
+  max-width: 520px;
+  padding: 20px 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  color: #333333;
+  line-height: 1.5;
+  z-index: 2;
+}
+
+.map-load-error strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.map-load-error span {
+  font-size: 13px;
+  color: #555555;
+}
+
 /* 1. 왼쪽 고정 세로 사이드바 패널 */
 .search-sidebar {
   position: absolute;
@@ -151,8 +178,9 @@
 }
 
 .scan-btn img {
-  height: 65px;
+  height: 70px; /* 하단 흰색 바(70px)와 동일한 높이 */
   width: auto;
+  margin-top: 0;
 }
 
 .bookmark-btn img {

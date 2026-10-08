@@ -1,15 +1,39 @@
-// 1. 카카오 지도 생성
-var container = document.getElementById("map");
-var options = {
-  center: new kakao.maps.LatLng(37.5665, 126.978), // 초기 서울시청 좌표
-  level: 3,
-};
-var map = new kakao.maps.Map(container, options);
+var map;
+var ps;
+var markers = [];
+var infowindow;
 
-// 2. 장소 검색 서비스 및 마커/인포윈도우 관리 변수
-var ps = new kakao.maps.services.Places();
-var markers = []; // 여러 개의 검색 결과 마커를 저장할 배열
-var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
+function showMapLoadError() {
+  var container = document.getElementById("map");
+  if (!container || container.querySelector(".map-load-error")) {
+    return;
+  }
+  var message = document.createElement("div");
+  message.className = "map-load-error";
+  message.innerHTML =
+    "<strong>지도를 불러오지 못했습니다.</strong>" +
+    "<span>카카오맵 JavaScript 키의 SDK 도메인에 지금 접속 중인 주소를 등록해 주세요.<br />현재는 http://127.0.0.1:5500 과 http://localhost:5500 만 허용됩니다.</span>";
+  container.appendChild(message);
+}
+
+function initKakaoMap() {
+  var container = document.getElementById("map");
+  var options = {
+    center: new kakao.maps.LatLng(37.5665, 126.978),
+    level: 3,
+  };
+  map = new kakao.maps.Map(container, options);
+  map.relayout();
+
+  ps = new kakao.maps.services.Places();
+  infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
+}
+
+if (window.kakao && kakao.maps && typeof kakao.maps.load === "function") {
+  kakao.maps.load(initKakaoMap);
+} else {
+  showMapLoadError();
+}
 
 // 3. 키워드 검색 실행 함수
 function searchPlaces() {
