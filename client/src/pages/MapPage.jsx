@@ -222,7 +222,7 @@ export default function MapPage() {
               <span>
                 카카오맵 JavaScript 키의 SDK 도메인에 지금 접속 중인 주소를 등록해 주세요.
                 <br />
-                현재는 http://127.0.0.1:5500 과 http://localhost:5500 만 허용됩니다.
+                개발 서버 주소는 http://localhost:3000 입니다.
               </span>
             </div>
           )}

@@ -83,9 +83,9 @@ export default function Main() {
           <img src={boardImg} alt="Main Board" className="board-bg-img" />
 
           <div className="tab-click-layer">
-            <a href="#" className="tab-link diary-link">Diary</a>
-            <a href="#" className="tab-link sticker-link">Sticker Book</a>
-            <a href="#" className="tab-link map-link">Map</a>
+            <Link to={PATHS.diaryDaily} className="tab-link diary-link">Diary</Link>
+            <Link to={PATHS.stickerBook} className="tab-link sticker-link">Sticker Book</Link>
+            <Link to={PATHS.map} className="tab-link map-link">Map</Link>
           </div>
         </section>
       </main>

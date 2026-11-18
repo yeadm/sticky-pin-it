@@ -15,7 +15,7 @@ export default function Login() {
   };
 
   return (
-    <>
+    <div className="login-page">
       {/* 화면 중앙 전체 껍데기 (그리드 적용 대상) */}
       <div className="login-wrapper">
         {/* 1. 왼쪽: 로고 영역 */}
@@ -44,6 +44,6 @@ export default function Login() {
 
       {/* 제작자 로고 */}
       <div className="c">@dam.dam</div>
-    </>
+    </div>
   );
 }

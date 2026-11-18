@@ -6,9 +6,11 @@
   font-family: sans-serif;
 }
 
-/* 화면 전체 중앙 정렬 및 배경색 */
-body {
-  width: 100vw;
+/* 화면 전체 중앙 정렬 및 배경색
+   (React 에선 CSS 가 모든 화면에 같이 적용돼서, body 대신 로그인 화면 껍데기에만 걸어요) */
+.login-page {
+  position: relative;
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
